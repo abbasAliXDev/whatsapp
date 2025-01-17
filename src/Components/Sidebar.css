@@ -1,0 +1,342 @@
+.sideBarDiv{
+    background-color: rgb(32, 44, 51);
+    height: 100vh;
+    width: 65px;
+    border-right: 1px solid rgba(134, 150, 160, .15);
+}
+
+.contactBox{
+    height: 100vh;
+    width: 390px;
+    background-color: rgb(17, 27, 33);
+}
+.chatBox{
+    height: 100vh;
+    background-color: rgb(32, 44, 51);
+    width: calc(100vw - (65px + 390px));
+}
+
+.sideBarDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 0%;
+}
+.userImg{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 50%;
+    height: auto;
+    width: 32px;
+}
+
+.sideBarDiv .sideLink{
+    position: relative;
+}
+
+.firstSideBar{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.firstSideBar div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.iconSideLinkCircle{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.activeIconSideLinkCircle{
+    transition: 0.15s all ease;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.firstSideBarSecond{
+    position: relative;
+}
+.firstSideBarSecond::before{
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    top: -15px;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hiddenLabel {
+    width: auto;
+    padding: 2px 15px;
+    z-index: 999999;
+    height: 25px;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    white-space: nowrap;
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-shadow: rgba(31, 31, 31, 0.1) 0px 1px 1px;
+    color: #000000;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    display: none; /* Initial display set to none */
+    transition: opacity 0.25s linear, visibility 0.25s linear;
+}
+
+.sideLink:hover .hiddenLabel {
+    cursor: pointer;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+}
+
+.secondSideBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.hdgContactBox{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    height: 75px;
+    padding: 0px 5%;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+    font-size: 22px;
+    color: #f0f0f0;
+    letter-spacing: 0.2px;
+    text-shadow: rgba(255, 255, 255, 0.1) 0px 3px 3px;
+}
+.iconDivHdgContactBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.iconDivHdgContactBox span{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.searchBox{
+    width: 100%;
+    height: 35px;
+    padding: 0% 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+.searchBox input{
+    width: 100%;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background-color: rgb(32, 44, 51);
+    padding: 8px 25px 8px 45px;
+}
+.searchBox input::placeholder{
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.1px;
+}
+.faArrowLeftIcon{
+    position: absolute;
+    top: 4px;
+    color: rgb(0, 168, 132);
+    font-size: 19px;
+    left: 32px;
+    cursor: pointer;
+    rotate: -45deg;
+    animation: rotate 0.2s forwards;
+}
+.faSearchIcon{
+    position: absolute;
+    top: 6px;
+    rotate: 75deg;
+    cursor: pointer;
+    animation: rotate2 0.4s forwards;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    left: 32px;
+    cursor: pointer;
+}
+.faXmarkIcon{
+    position: absolute;
+    top: 6px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    right: 32px;
+    cursor: pointer;
+    transform: scale(0.75);
+    animation: scaleUp 0.2s forwards;
+}
+.searchBox span{
+    position: absolute;
+}
+.searchIconActive .faArrowLeftIcon{
+    display: none;
+}
+.arrowActive .faSearchIcon{
+    display: none;
+}
+.fixedSection{
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    height: auto;
+}
+.gridMsgType{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding: 10px 5%;
+    gap: 10px;
+}
+.cardMsgType{
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    font-size: 13px;
+    padding: 6px 13px;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.2px;
+    font-weight: 300;
+    cursor: pointer;
+    background-color: rgb(32, 44, 51);
+}
+.activeCard{
+    color: rgb(0, 168, 132);
+    background-color: #0a332c;
+    transition: 0.15s all ease;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.contactList{
+    width: 100%;
+    background-color: transparent;
+    border-top: 1px solid rgba(134, 150, 160, .15);
+    height: calc(100vh - 160px);
+}
+
+.contactGrid{
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    gap: 1px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    scrollbar-color: rgba(255, 255, 255, 0.16);
+}
+.contactGrid:hover{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    pointer-events: auto;
+    scrollbar-width: thin;
+}
+.contactGrid::-webkit-scrollbar-track{
+    scrollbar-track-color: rgb(32, 44, 51) !important;
+}
+.contactCard{
+    width: 100%;
+    height:80px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    align-items: center;
+    gap: 30px;
+    justify-content: left;
+    padding: 0% 5%;
+    border-bottom: 1px solid rgba(134, 150, 160, .15);
+}
+.contactCard > img{
+    width: 50px;
+    height: auto;
+}
+.cardDivPerson{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    line-height: 23px;
+    gap: 0px;
+}
+.nameOfPerson{
+    letter-spacing: 0.2px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.lastMsg{
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.2);
+
+
+    width: 200px;
+    height: auto;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
+.emptyState{
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 12px;
+    padding: 0% 2%;
+}
+
+@keyframes rotate {0%{rotate: -45deg;}100%{rotate: 0deg;}}
+@keyframes rotate2 {0%{rotate: 75deg;}100%{rotate: 0deg;}}
+@keyframes scaleUp {0%{transform: scale(0.75);}100%{transform: scale(1);}}
